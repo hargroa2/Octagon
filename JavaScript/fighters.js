@@ -38,7 +38,7 @@ fightButton.addEventListener("click", async () => {
   };
 
   if (searchInput == 0) {
-    return errorMessage("Invalid search, please enter another search term");
+    return errorMessage("Invalid search, please enter a search term");
   } else if (howManyWordsInSearch() != 2) {
     errorMessage("Please enter a valid fighter");
   } else {

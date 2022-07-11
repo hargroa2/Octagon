@@ -1,3 +1,5 @@
+const rapidKey = config.RAPID_API_KEY;
+
 // ====== NAVIGATION ====== COMMENT
 const hamburger = document.querySelector(".hamburger");
 
@@ -21,7 +23,7 @@ const schedButton = document.getElementById("scheduleData");
 const options = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": "8bdd6ac647mshec06c3605007861p14466bjsn68a802965e6a",
+    "X-RapidAPI-Key": rapidKey,
     "X-RapidAPI-Host": "sports-data3.p.rapidapi.com",
   },
 };
