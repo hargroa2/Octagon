@@ -37,16 +37,11 @@ const ufcRankings = async () => {
   console.log(json);
 
   // ====== APPENDING DATA TO PAGE ====== COMMENT
-
-  // const list = document.getElementById("list");
   const rank = document.getElementById("ranks");
-  // const num = document.getElementById("number");
-  // const name = document.getElementById("name");
-  // const link = document.getElementById("link");
 
   const forEachClass = (index) => {
     for (let fighter of Object.keys(json[0].fighters)) {
-      // append the P4P contents onto the page
+      // append the contents for each fighter onto the page
       //NOTE: May need to change this later for css reasons
       const paragraph = document.createElement("p");
       paragraph.innerText = json[index].fighters[fighter].fighter_ranking;
@@ -61,6 +56,8 @@ const ufcRankings = async () => {
       rank.append(paragraphLinks);
     }
   };
+
+  const select = document.getElementById("weightClasses");
 
   const weightChoice = () => {
     if (select.options[select.selectedIndex].value === "P4P") {

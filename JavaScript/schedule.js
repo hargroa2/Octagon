@@ -31,8 +31,35 @@ const options = {
 const ufcSchedule = async () => {
   const urlSchedule = "https://sports-data3.p.rapidapi.com/ufc";
   const ufcData2 = await fetch(urlSchedule, options);
-  const json2 = await ufcData2.json();
-  console.log(json2);
+  const json = await ufcData2.json();
+  console.log(json);
+
+  //====== APPENDING DATA TO PAGE ======
+  const schedContainer = document.getElementById("schedule");
+
+  const printFightCards = () => {
+    for (let fight of Object.keys(json)) {
+      const data = document.createElement("p");
+      data.innerText = json[fight].eventDescription;
+      schedContainer.append(data);
+
+      for (let fighting of Object.keys(json[fight].fights)) {
+        const dataFight = document.createElement("p");
+        dataFight.innerText = json[fight].fights[fighting].description;
+        schedContainer.append(dataFight);
+
+        const dataMoney1 = document.createElement("p");
+        dataMoney1.innerText = json[fight].fights[fighting].moneyLine1;
+        schedContainer.append(dataMoney1);
+
+        const dataMoney2 = document.createElement("p");
+        dataMoney2.innerText = json[fight].fights[fighting].moneyLine2;
+        schedContainer.append(dataMoney2);
+      }
+    }
+  };
+
+  printFightCards();
 };
 
 schedButton.onclick = () => ufcSchedule();
