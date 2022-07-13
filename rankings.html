@@ -4,10 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Khand -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Khand:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- News Cycle -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=News+Cycle&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Mukta Vaani -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta+Vaani&display=swap"
       rel="stylesheet"
     />
     <link defer rel="stylesheet" href="CSS/style.css" />
@@ -16,10 +33,7 @@
   <body>
     <!-- Navbar -->
     <header>
-      <nav class="navbar">
-        <!-- Logo -->
-        <a href="#" class="nav-branding">OCTAGON</a>
-
+      <nav class="navbar" id="grayNav">
         <!-- Nav Tabs -->
         <ul class="nav-menu">
           <li class="nav-item">
@@ -28,6 +42,12 @@
           <li class="nav-item">
             <a href="schedule.html" class="nav-link">SCHEDULE</a>
           </li>
+        </ul>
+
+        <!-- Logo -->
+        <a href="index.html" id="nav-branding">OCTAGON</a>
+
+        <ul class="nav-menu nav-position">
           <li class="nav-item">
             <a href="rankings.html" class="nav-link">RANKINGS</a>
           </li>
@@ -48,13 +68,15 @@
 
     <!-- Main Content -->
     <main>
-      <h1>FIGHTER RANKINGS</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque dolorem
-        quo magnam natus, voluptatibus officia libero eveniet harum pariatur
-        distinctio eaque error, exercitationem sed ut tempora in ullam quia
-        provident!
-      </p>
+      <div id="rank-container">
+        <h1>FIGHTER RANKINGS</h1>
+        <p class="head-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque
+          dolorem quo magnam natus, voluptatibus officia libero eveniet harum
+          pariatur distinctio eaque error, exercitationem sed ut tempora in
+          ullam quia provident!
+        </p>
+      </div>
 
       <select name="weightClasses" id="weightClasses">
         <option value="um">Select Weight Class</option>

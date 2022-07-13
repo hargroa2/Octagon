@@ -4,10 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Khand -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Khand:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- News Cycle -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=News+Cycle&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Mukta Vaani -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta+Vaani&display=swap"
       rel="stylesheet"
     />
     <link defer rel="stylesheet" href="CSS/style.css" />
@@ -17,17 +34,20 @@
     <!-- Navbar -->
     <header>
       <nav class="navbar">
-        <!-- Logo -->
-        <a href="#" class="nav-branding">OCTAGON</a>
-
         <!-- Nav Tabs -->
-        <ul class="nav-menu">
+        <ul class="nav-menu nav-animation">
           <li class="nav-item">
             <a href="index.html" class="nav-link">HOME</a>
           </li>
           <li class="nav-item">
             <a href="schedule.html" class="nav-link">SCHEDULE</a>
           </li>
+        </ul>
+
+        <!-- Logo -->
+        <a href="index.html" id="nav-branding">OCTAGON</a>
+
+        <ul class="nav-menu nav-position nav-animation">
           <li class="nav-item">
             <a href="rankings.html" class="nav-link">RANKINGS</a>
           </li>
@@ -48,8 +68,64 @@
 
     <!-- Main Content -->
     <main>
-      <p>NEWS</p>
-      <div id="newsContainer"=></div>
+      <div id="hero-image">
+        <div class="hero-text">
+          <h1 id="hero-header">
+            Welcome to the <span id="octagon-head">Octagon</span>
+          </h1>
+          <h3 id="hero-description">
+            Your favorite fighting resource for the UFC
+          </h3>
+          <a href="#button-travel" id="exploreButton">Explore</a>
+        </div>
+      </div>
+
+      <h1 id="button-travel">What is the UFC?</h1>
+      <p class="main-paragraphs">
+        The UFC, which stands for the Ultimate Fighting Championship, is an
+        organization that conducts mixed martial art events in a cage where two
+        people fight each other using a variety of martial arts techniques and
+        styles.
+      </p>
+
+      <h3 class="main-paragraphs" id="main-par">
+        A fight within the octagon cage can be won in one of three ways:
+      </h3>
+      <div id="winning-options">
+        <div class="winning-boxes">
+          <div class="winning-types">Knockout</div>
+          <p id="center-winning-boxes">
+            A fighter is knocked out by the other person to the point where they
+            could be unconscious or unable to continue the round
+          </p>
+        </div>
+        <div class="winning-boxes">
+          <div class="winning-types">Decision</div>
+          <p id="center-winning-boxes">
+            When both fighters make it to the end of the fight and are each
+            evaluated by a panel of 3 judges
+          </p>
+        </div>
+        <div class="winning-boxes">
+          <div class="winning-types">Submission</div>
+          <p>
+            When a fighter is in a manipulated grappling position that could
+            cause a limb to break, for their lungs to no longer receive air via
+            a choke, or when the losing opponent taps out when held down by the
+            other fighter for other reasons
+          </p>
+        </div>
+      </div>
+
+      <p class="main-paragraphs">
+        Some other ways that are worth mentioning are:
+      </p>
+
+      <h3 class="main-paragraphs" id="main-par">
+        Martial arts techniques that are utilized in the ring:
+      </h3>
+
+      <div id="newsContainer"></div>
     </main>
 
     <!-- Footer -->

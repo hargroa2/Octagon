@@ -2,12 +2,13 @@ const rapidKey = config.RAPID_API_KEY;
 
 // ====== NAVIGATION ====== COMMENT
 const hamburger = document.querySelector(".hamburger");
-
 const navMenu = document.querySelector(".nav-menu");
+const navPosition = document.querySelector(".nav-position");
 
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   navMenu.classList.toggle("active");
+  navPosition.classList.toggle("active");
 });
 
 document.querySelectorAll(".nav-link").forEach((n) =>

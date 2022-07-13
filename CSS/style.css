@@ -4,16 +4,107 @@
   box-sizing: border-box;
 }
 
-/* body {
-  font-family: "Khand", sans-serif;
-} */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: overlay;
+  overflow-x: hidden;
+}
+body {
+  /* font-family: "News Cycle", sans-serif; */
+  font-family: "Mukta Vaani", sans-serif;
+  /* background-color: #262626; */
+  color: black;
+}
 
-header {
-  background-color: #262626;
+main {
+  background-color: #f5f7f0;
+  height: 100%;
+}
+
+p {
+  font-family: "Mukta Vaani", sans-serif;
+}
+
+h1 {
+  text-align: center;
   font-family: "Khand", sans-serif;
+  font-size: 100px;
+  letter-spacing: 0.1em;
+  margin-top: 4.4rem;
+}
+
+h3 {
+  text-align: center;
+  font-size: 25px;
+}
+
+/* Hero banner */
+#hero-image {
+  height: 944px;
+  background-image: url(/FrontendProject/images/cage-gray.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#hero-text {
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#hero-header {
+  color: white;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 0;
+}
+
+#octagon-head {
+  color: #f5cb5c;
+  -webkit-text-stroke: 2px black;
+}
+
+#hero-description {
+  color: white;
+}
+
+#exploreButton {
+  margin-top: 3.5em;
+  margin-left: 50em;
+  margin-right: 50em;
+  padding: 1em 5em;
+  background-color: #f5cb5c;
+  border: 2px solid black;
+  display: block;
+  font-family: "Mukta Vaani", sans-serif;
+  text-decoration: none;
+  color: black;
+  transition: 0.3s ease;
+}
+
+#exploreButton:hover {
+  background-color: #e9ba3a;
+  /* color: #f5cb5c; */
 }
 
 /* Navbar */
+header {
+  /* background-color: #262626; */
+  /* Turning fixed position will make color again */
+  position: fixed;
+  font-family: "Khand", sans-serif;
+}
 
 li {
   list-style: none;
@@ -25,23 +116,31 @@ li {
 }
 
 .navbar {
+  background-color: transparent;
   min-height: 70px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 0 24px;
+  letter-spacing: 0.2em;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.nav-menu {
+.navbar .nav-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 60px;
+  gap: 8rem;
 }
 
-.nav-branding {
-  font-size: 2rem;
-  justify-self: left;
+.navbar[id="grayNav"] {
+  background-color: #262626;
+}
+
+#nav-branding {
+  font-size: 2.3rem;
+  color: #f5cb5c;
 }
 
 .nav-link {
@@ -49,7 +148,27 @@ li {
 }
 
 .nav-link:hover {
-  color: rgb(199, 66, 66);
+  color: #f5cb5c;
+}
+
+/* Nav animation of line */
+
+.nav-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 /* Hamburger icon */
@@ -66,6 +185,71 @@ li {
   transition: all 0.3s ease-in-out;
   background-color: white;
 }
+
+/* Scroll bar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f5cb5c;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e9ba3a;
+}
+
+/* When you scroll, navbar changes */
+
+/* === */
+.main-paragraphs {
+  text-align: center;
+  font-size: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 3rem;
+}
+
+#main-par {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+#winning-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 50px;
+  margin-bottom: 120px;
+}
+
+.winning-boxes {
+  border: 2px solid black;
+  padding: 3rem;
+  background-color: #f5cb5c;
+  /* font-size: 50px; */
+  text-align: center;
+  font-family: "News Cycle", sans-serif;
+  width: 280px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-top: 0;
+}
+
+.winning-types {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+#center-winning-boxes {
+  margin-top: 50px;
+}
+
+/* MEDIA QUERIES */
 
 @media screen and (max-width: 768px) {
   /* Hamburger */
@@ -85,11 +269,31 @@ li {
     transform: translateY(-8px) rotate(-45deg);
   }
 
+  .navbar {
+    justify-content: space-between;
+  }
+
   .nav-menu {
     position: fixed;
-    /* Menu is hidden to left of screen */
     left: 100%;
-    top: 70px;
+    top: 60px;
+    /* top: 9%; */
+    gap: 0;
+    flex-direction: column;
+    background-color: #262626;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .navbar .nav-menu {
+    gap: 0;
+  }
+
+  .nav-position {
+    position: fixed;
+    left: 100%;
+    top: 174px;
     gap: 0;
     flex-direction: column;
     background-color: #262626;
@@ -102,14 +306,22 @@ li {
     margin: 16px 0;
   }
 
-  .nav-menu.active {
+  .nav-menu.active,
+  .nav-position.active {
     left: 0;
   }
+
+  .nav-animation:after {
+    width: 0;
+  }
+
+  #hero-header {
+    font-size: 60px;
+    margin-left: 40%;
+    margin-right: 40%;
+  }
+
+  #hero-description {
+    font-size: 20px;
+  }
 }
-
-/* Fighters Page */
-
-/* Rankings Page */
-/* #rankDisplay {
-  display: none;
-} */
