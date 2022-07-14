@@ -11,9 +11,7 @@ body {
 }
 
 body {
-  /* font-family: "News Cycle", sans-serif; */
   font-family: "Mukta Vaani", sans-serif;
-  /* background-color: #262626; */
   color: black;
   overflow: overlay;
   overflow-x: hidden;
@@ -397,18 +395,49 @@ select {
 
 /* SCHEDULE PAGE COMMENT */
 
+/* Banner at top */
+
+#sched-image {
+  height: 800px;
+  /* By Lee Brimelow - cropped from DSC_0029, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=2690137 */
+  background-image: url(/FrontendProject/images/octagon-head.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#sched-text {
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  /* filter: blur(0) !important; */
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === */
+
 #for-more-information {
-  /* display: flex; */
-  /* justify-content: center; */
   text-align: center;
   margin-left: 10px;
   margin-right: 10px;
   gap: 5px;
   margin-top: 20px;
+  color: white;
 }
 
 #for-more-information a {
-  color: black;
+  color: white;
+}
+
+.head-text {
+  color: white;
 }
 
 .button-center {
@@ -452,7 +481,7 @@ select {
 }
 
 .fight-flex div {
-  margin: 20px 20px;
+  margin: 20px 20px 0 20px;
 }
 
 /* MEDIA QUERIES  COMMENT*/
@@ -529,5 +558,11 @@ select {
 
   #hero-description {
     font-size: 20px;
+  }
+
+  h1 {
+    font-size: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
