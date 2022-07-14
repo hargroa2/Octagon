@@ -38,21 +38,39 @@ const ufcRankings = async () => {
   console.log(json);
 
   // ====== APPENDING DATA TO PAGE ====== COMMENT
-  const rank = document.getElementById("ranks");
 
   const forEachClass = (index) => {
+    const rank = document.getElementById("ranks");
     for (let fighter of Object.keys(json[0].fighters)) {
-      const paragraph = document.createElement("p");
-      paragraph.innerText = json[index].fighters[fighter].fighter_ranking;
-      rank.append(paragraph);
+      const createDivs = document.createElement("div");
+      rank.append(createDivs);
 
-      const paragraphNames = document.createElement("p");
-      paragraphNames.innerText = json[index].fighters[fighter].fullName;
-      rank.append(paragraphNames);
+      const description = document.createElement("div");
+      description.innerText = json[index].fighters[fighter].fighter_ranking;
+      description.classList = "flex-ranks";
+      createDivs.setAttribute("id", "weight-id");
+      createDivs.append(description);
 
-      const paragraphLinks = document.createElement("p");
-      paragraphLinks.innerText = json[index].fighters[fighter].url;
-      rank.append(paragraphLinks);
+      const descriptionNames = document.createElement("div");
+      descriptionNames.innerText = json[index].fighters[fighter].fullName;
+      descriptionNames.classList = "flex-ranks";
+      createDivs.append(descriptionNames);
+
+      const descriptionLinks = document.createElement("a");
+      descriptionLinks.href = `http://www.ufc.com/athlete/${json[
+        index
+      ].fighters[fighter].fullName
+        .toLowerCase()
+        .replace(" ", "-")}`;
+      descriptionLinks.innerText = json[index].fighters[fighter].url;
+      descriptionLinks.classList = "flex-ranks";
+      createDivs.append(descriptionLinks);
+
+      const champOrOne = json[index].fighters[fighter].fighter_ranking;
+
+      if (champOrOne === "1" || champOrOne === "CHAMPION") {
+        description.setAttribute("id", "champ-box");
+      }
     }
   };
 
@@ -92,4 +110,7 @@ const ufcRankings = async () => {
 
   weightChoice();
 };
-rankButton.onclick = () => ufcRankings();
+rankButton.onclick = () => {
+  rankings.innerHTML = "";
+  ufcRankings();
+};
