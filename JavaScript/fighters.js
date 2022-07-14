@@ -22,6 +22,7 @@ const searchResults = document.querySelector(".results");
 
 fightButton.addEventListener("click", async () => {
   const searchInput = document.getElementById("searchMe").value;
+
   wikiURL = `https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&list=search&utf8=1&srsearch=${searchInput}`;
 
   const ufcWiki = await fetch(wikiURL);
@@ -45,6 +46,8 @@ fightButton.addEventListener("click", async () => {
   } else {
     displayResults(json);
   }
+
+  //Figure out how to alert user if zero results found TODO
 });
 
 const displayResults = (results) => {
@@ -54,14 +57,19 @@ const displayResults = (results) => {
     let urlUFC = `https://www.ufc.com/athlete/${result.title
       .replaceAll(" ", "-")
       .toLowerCase()}`;
+
     output += `
     <div class="result">
-        <a href="${urlUFC}" target="_blank" rel="noopener">${result.title}</a>
-        <br />
-        <a href="${resultURL}" target="_blank" rel="noopener">${resultURL}</a>
-        <p>
-          ${result.snippet + "..."}
-        </p>
+        <table>
+          <tr>
+            <td><a href="${urlUFC}" target="_blank" rel="noopener">${
+      result.title
+    }</a></td>
+            <td><a href="${resultURL}" target="_blank" rel="noopener">${resultURL}</a></td>
+            <td><p>${"..." + result.snippet + "..."}</p></td>
+          </tr>
+        </table>
+      
     </div>`;
     searchResults.innerHTML = output;
   });

@@ -70,18 +70,24 @@
     <!-- Main Content -->
     <main>
       <h1>UPCOMING EVENTS</h1>
-      <p class="head-text">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-        quis tempora minima, omnis quam optio atque maxime totam aliquam
-        expedita nam nulla libero deserunt iure aspernatur nemo quasi quia
-        tempore.
+      <p class="head-text container">
+        Curious about what UFC events are coming up? Click down below for the
+        full schedule which updates on a regular basis. The schedule will show
+        each fight within the cards that are on the way, who's fighting who, and
+        what their betting odds are.
       </p>
-      <p>
+      <p id="for-more-information">
         For more information, click
-        <a href="https://www.ufc.com/events">here</a>
+        <a href="https://www.ufc.com/events" target="_blank">here</a>
         for the official UFC Events page
       </p>
-      <button id="scheduleData">Click for schedule</button>
+      <div class="button-center">
+        <a id="scheduleData" class="button-style">Click for schedule</a>
+      </div>
+
+      <div class="preload">
+        <div class="loadAnimation"></div>
+      </div>
 
       <div id="schedule"></div>
     </main>

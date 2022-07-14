@@ -19,7 +19,7 @@ document.querySelectorAll(".nav-link").forEach((n) =>
   })
 );
 
-//======
+//====== JQUERY ======
 
 $(function () {
   $(window).scroll(function () {

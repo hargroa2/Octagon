@@ -42,8 +42,6 @@ const ufcRankings = async () => {
 
   const forEachClass = (index) => {
     for (let fighter of Object.keys(json[0].fighters)) {
-      // append the contents for each fighter onto the page
-      //NOTE: May need to change this later for css reasons
       const paragraph = document.createElement("p");
       paragraph.innerText = json[index].fighters[fighter].fighter_ranking;
       rank.append(paragraph);
