@@ -1,10 +1,10 @@
-# Octagon
+# Octagon: Your favorite source for the UFC
 
 ## Overview
 
-Octagon is a website dedicated to those who are fans of the Ultimate Fighting Championship, An organization that coordinates the most Mixed Martial Arts events within the industry. With this site you can do the following:
+Octagon is a website dedicated to those who are fans of the Ultimate Fighting Championship, which an organization that coordinates the most Mixed Martial Arts events within the industry. With this site you can do the following:
 
-- Check who is within the top 15 of the UFC's ranking system
+- Check who is within the top 15 of the UFC's ranking system currently
 - Look at the upcoming Fight Nights and PPV events that are scheduled
 - Research fighters and related topics within a built-in search engine
 
@@ -22,7 +22,7 @@ I also utilized 3 APIs, which were:
 
 ## Installation
 
-In order to check out this website, you will have to clone this repo and then obtain an API key from Rapid API. Using that API key, go to rankings.html and schedule.html files and place it on line 1, replacing the "config.RAPID_API_KEY" variable with your key in a quotes like so:
+In order to check out this website, you will have to clone this repo and then obtain an API key from Rapid API. Using that API key, go to rankings.html and schedule.html files and place it on line 1, replacing the "config.RAPID_API_KEY" variable with your key in quotes like so:
 
 `const rapidKey = "12345key"`
 
