@@ -271,7 +271,7 @@ h3 {
 
 /* FIGHTERS PAGE COMMENT */
 #fight-image {
-  height: 70vh;
+  height: 80vh;
   background-color: #020305;
   background-repeat: no-repeat;
   background-size: cover;
@@ -714,7 +714,6 @@ svg:hover {
     position: fixed;
     left: 100%;
     top: 60px;
-    /* top: 9%; */
     gap: 0;
     flex-direction: column;
     background-color: #262626;
@@ -730,7 +729,7 @@ svg:hover {
   .nav-position {
     position: fixed;
     left: 100%;
-    top: 174px;
+    top: 170px;
     gap: 0;
     flex-direction: column;
     background-color: #262626;
@@ -853,6 +852,7 @@ svg:hover {
 
   #head-stroke {
     margin-top: 30px;
+    font-size: 40px;
   }
 }
 
@@ -881,5 +881,37 @@ svg:hover {
   #rank-description {
     margin-left: 30%;
     margin-right: 30%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  /* nav {
+    width: 100px;
+  } */
+
+  /* ul {
+    width: 390px;
+  } */
+
+  h1 #head-text {
+    font-size: 20px;
+  }
+
+  /* #head-stroke {
+    font-size: 20px;
+  } */
+
+  tr {
+    margin: 0;
+  }
+
+  table {
+    width: 100px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  td {
+    font-size: 15px;
   }
 }
