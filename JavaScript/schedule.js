@@ -68,7 +68,6 @@ const ufcSchedule = async () => {
 
         const dataMoney2 = document.createElement("div");
         dataMoney2.innerText = json[fight].fights[fighting].moneyLine2;
-        // dataMoney2.style.width = "50px";
         divForFight.append(dataMoney2);
       }
     }
