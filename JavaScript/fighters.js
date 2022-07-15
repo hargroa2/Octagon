@@ -59,18 +59,28 @@ const displayResults = (results) => {
       .toLowerCase()}`;
 
     output += `
-    <div class="result">
-        <table>
-          <tr>
-            <td><a href="${urlUFC}" target="_blank" rel="noopener">${
-      result.title
-    }</a></td>
-            <td><a href="${resultURL}" target="_blank" rel="noopener">${resultURL}</a></td>
-            <td><p>${"..." + result.snippet + "..."}</p></td>
-          </tr>
-        </table>
-      
-    </div>`;
+      <div class="result">
+        <div class="result-grid">
+          <a href="${urlUFC}" target="_blank" rel="noopener">${result.title}</a>
+          <a href="${resultURL}" target="_blank" rel="noopener">${resultURL}</a>
+          <div>${"..." + result.snippet + "..."}</div>
+        </div>
+      </div>
+      `;
+
+    // output += `
+    // <div class="result">
+    //     <table>
+    //       <tr class="table-flex">
+    //         <td id="ufc-id"><a href="${urlUFC}" target="_blank" rel="noopener">${
+    //   result.title
+    // }</a></td>
+    //         <td><a href="${resultURL}" target="_blank" rel="noopener">${resultURL}</a></td>
+    //         <td><div>${"..." + result.snippet + "..."}</div></td>
+    //       </tr>
+    //     </table>
+
+    // </div>`;
     searchResults.innerHTML = output;
   });
 };

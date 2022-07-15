@@ -35,6 +35,7 @@ const ufcRankings = async () => {
 
   const ufcData = await fetch(url, options);
   const json = await ufcData.json();
+  loader.style.display = "none";
   console.log(json);
 
   // ====== APPENDING DATA TO PAGE ====== COMMENT
@@ -54,6 +55,7 @@ const ufcRankings = async () => {
       const descriptionNames = document.createElement("div");
       descriptionNames.innerText = json[index].fighters[fighter].fullName;
       descriptionNames.classList = "flex-ranks";
+      descriptionNames.setAttribute("id", "bold-name");
       createDivs.append(descriptionNames);
 
       const descriptionLinks = document.createElement("a");
@@ -64,13 +66,9 @@ const ufcRankings = async () => {
         .replace(" ", "-")}`;
       descriptionLinks.innerText = json[index].fighters[fighter].url;
       descriptionLinks.classList = "flex-ranks";
+      descriptionLinks.setAttribute("id", "url-underline");
+      descriptionLinks.setAttribute("target", "_blank");
       createDivs.append(descriptionLinks);
-
-      const champOrOne = json[index].fighters[fighter].fighter_ranking;
-
-      if (champOrOne === "1" || champOrOne === "CHAMPION") {
-        description.setAttribute("id", "champ-box");
-      }
     }
   };
 
@@ -110,7 +108,51 @@ const ufcRankings = async () => {
 
   weightChoice();
 };
+
+const loader = document.querySelector(".preload");
+const icon = loader.querySelector(".loadAnimation");
+
 rankButton.onclick = () => {
+  //====== LOADING ICONS ======
+  const loadAnimations = [
+    "🕐",
+    "🕜",
+    "🕑",
+    "🕝",
+    "🕒",
+    "🕞",
+    "🕓",
+    "🕟",
+    "🕔",
+    "🕠",
+    "🕕",
+    "🕡",
+    "🕖",
+    "🕢",
+    "🕗",
+    "🕣",
+    "🕘",
+    "🕤",
+    "🕙",
+    "🕥",
+    "🕚",
+    "🕦",
+    "🕛",
+    "🕧",
+  ];
+
+  const interval = 125;
+
+  const loadEmojis = (arr) => {
+    setInterval(() => {
+      icon.innerText = arr[Math.floor(Math.random() * arr.length)];
+    }, interval);
+  };
+
+  const init = () => {
+    loadEmojis(loadAnimations);
+  };
+  init();
   rankings.innerHTML = "";
   ufcRankings();
 };
