@@ -36,7 +36,6 @@ const ufcRankings = async () => {
   const ufcData = await fetch(url, options);
   const json = await ufcData.json();
   loader.style.display = "none";
-  console.log(json);
 
   // ====== APPENDING DATA TO PAGE ====== COMMENT
 
