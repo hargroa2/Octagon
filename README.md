@@ -1,4 +1,4 @@
-# Octagon: Your favorite source for the UFC
+# Octagon: your favorite source for the UFC
 
 ## Overview
 
@@ -22,7 +22,7 @@ I also utilized 3 APIs, which were:
 
 ## Installation
 
-In order to check out this website, you will have to clone this repo and then obtain an API key from Rapid API. Using that API key, go to rankings.html and schedule.html files and place it on line 1, replacing the "config.RAPID_API_KEY" variable with your key in quotes like so:
+In order to check out this website, you will have to clone this repo and then obtain an API key from Rapid API[Rapid API](https://rapidapi.com/hub). Using that API key, go to rankings.html and schedule.html files and place it on line 1, replacing the "config.RAPID_API_KEY" variable with your key in quotes like so:
 
 `const rapidKey = "12345key"`
 
