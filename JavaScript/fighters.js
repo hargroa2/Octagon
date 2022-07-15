@@ -46,8 +46,6 @@ fightButton.addEventListener("click", async () => {
   } else {
     displayResults(json);
   }
-
-  //Figure out how to alert user if zero results found TODO
 });
 
 const displayResults = (results) => {
@@ -68,19 +66,6 @@ const displayResults = (results) => {
       </div>
       `;
 
-    // output += `
-    // <div class="result">
-    //     <table>
-    //       <tr class="table-flex">
-    //         <td id="ufc-id"><a href="${urlUFC}" target="_blank" rel="noopener">${
-    //   result.title
-    // }</a></td>
-    //         <td><a href="${resultURL}" target="_blank" rel="noopener">${resultURL}</a></td>
-    //         <td><div>${"..." + result.snippet + "..."}</div></td>
-    //       </tr>
-    //     </table>
-
-    // </div>`;
     searchResults.innerHTML = output;
   });
 };
